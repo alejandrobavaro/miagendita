@@ -1,112 +1,236 @@
+/* ============ ESTILOS BASE ============ */
 .trademarkGondraFooter {
   text-align: center;
   margin: 0;
   padding: 20px 0;
-
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f8f9fa, #ffffff, #f8f9fa);
+  position: relative;
+  overflow: hidden;
 }
 
+/* ============ LÍNEA DIVISORIA ANIMADA ============ */
+.divider-animated {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #000000, transparent);
+  margin: 0 auto 30px;
+  width: 80%;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, transparent, #ffffff, transparent);
+    animation: shine 3s infinite;
+  }
+}
+
+/* ============ CONTENEDOR PRINCIPAL ============ */
 .textoFooterAutor {
   border-radius: 8px;
-  width: 100%;
-  padding: 20px;
-
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  color: #495057;
-  margin-bottom: 20px;
+  width: 90%;
+  max-width: 800px;
+  padding: 25px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
 }
 
-.gridPadreProductosGondraFooter1 {
+/* ============ ENLACE PRINCIPAL ============ */
+.footer-link {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+/* ============ TEXTO PRINCIPAL ============ */
+.texto-principal {
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 15px;
+  font-weight: 500;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
   justify-content: center;
-  padding: 15px;
-  border-radius: 8px;
-  width: 100%;
-
+  align-items: center;
+  gap: 8px;
 }
 
-.texto-principal {
-  font-size: 16px;
-  color: #4a6fa5;
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-.textoFooterGondraWorld {
-  font-size: 14px;
-  transition: transform 0.2s ease;
-  color: #6c757d;
-
-  &:hover {
-    transform: scale(1.05);
-    color: #4a6fa5;
+/* ============ ANIMACIONES DE TEXTO ============ */
+.text-animation {
+  display: inline-block;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #000000;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+  
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 }
 
+.text-animation-delay {
+  display: inline-block;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #000000;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out 0.1s;
+  }
+  
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+/* ============ TEXTO SECUNDARIO ============ */
 .texto-secundario {
-  font-size: 14px;
-  color: #6c757d;
+  font-size: 16px;
+  color: #555555;
   margin-left: 10px;
+  font-weight: 400;
 }
 
-.imagen-limitada8 {
-  max-width: 120px;
-  height: auto;
-  transition: transform 0.2s ease;
-
+/* ============ ICONOS ============ */
+.icon-animation {
+  transition: all 0.3s ease;
+  color: #333333;
+  
   &:hover {
-    transform: scale(1.05);
+    transform: rotate(360deg);
+    color: #000000;
   }
 }
 
-.objetoCentrado1 {
-  display: block;
-  margin: 0 auto;
+.icon-animation-delay {
+  transition: all 0.3s ease 0.1s;
+  color: #555555;
+  
+  &:hover {
+    transform: rotate(360deg);
+    color: #333333;
+  }
 }
 
-hr {
-  margin: 20px 0;
-  border: none;
-  border-top: 1px solid #e0e0e0;
+/* ============ TEXTO DE MARCA ============ */
+.textoFooterGondraWorld {
+  font-size: 16px;
+  color: #444444;
+  letter-spacing: 1px;
+  padding: 10px 0;
+  position: relative;
+  display: inline-block;
+  
+  .bi-brilliance {
+    margin: 0 5px;
+    color: #333333;
+    transition: all 0.3s ease;
+  }
 }
 
+/* ============ EFECTO BRILLO ============ */
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    );
+    animation: shine 3s infinite;
+  }
+}
+
+/* ============ ANIMACIONES ============ */
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  20% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
+  .textoFooterAutor {
+    width: 95%;
+    padding: 20px 15px;
+  }
+  
   .texto-principal {
+    font-size: 16px;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .texto-secundario {
+    margin-left: 0;
     font-size: 15px;
   }
-
-  .texto-secundario {
-    font-size: 14px;
-  }
-
-  .imagen-limitada8 {
-    max-width: 100px;
+  
+  .textoFooterGondraWorld {
+    font-size: 15px;
   }
 }
 
 @media (max-width: 480px) {
+  .textoFooterAutor {
+    padding: 15px 10px;
+  }
+  
   .texto-principal {
+    font-size: 15px;
+  }
+  
+  .texto-secundario {
     font-size: 14px;
   }
-
-  .texto-secundario {
-    font-size: 13px;
-  }
-
-  .imagen-limitada8 {
-    max-width: 80px;
-  }
-
-  .gridPadreProductosGondraFooter1 {
-    gap: 10px;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-
-  .textoFooterAutor {
-    padding: 15px;
-    margin-top: 0;
+  
+  .textoFooterGondraWorld {
+    font-size: 14px;
   }
 }

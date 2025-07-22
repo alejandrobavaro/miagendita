@@ -1,41 +1,41 @@
 /* ============ ESTILOS BASE DEL HEADER ============ */
 .header-unificado {
-  background-color: #ffffff;
-  padding: 0.5rem 1rem; // Padding reducido mobile-first
-  position: sticky;
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 0.5rem 1rem; /* Padding reducido para mobile */
+  position: sticky; /* Header fijo en la parte superior */
   top: 0;
-  z-index: 1000;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Sombra más sutil
-  border-bottom: 1px solid #e9ecef;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil en gris */
+  border-bottom: 1px solid #e0e0e0; /* Borde inferior gris claro */
   
-  // Breakpoint tablet (768px)
+  /* Breakpoint para tablet (768px) */
   @media (min-width: 768px) {
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.5rem; /* Padding aumentado */
   }
   
-  // Breakpoint desktop (1024px)
+  /* Breakpoint para desktop (1024px) */
   @media (min-width: 1024px) {
-    padding: 0.75rem 2rem;
+    padding: 0.75rem 2rem; /* Padding mayor en desktop */
   }
 }
 
 /* ============ CONTENEDOR PRINCIPAL ============ */
 .contenedor-header {
   display: flex;
-  flex-direction: column; // Mobile: disposición vertical
+  flex-direction: column; /* Disposición vertical en mobile */
   align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  gap: 0.75rem; // Gap inicial mobile
+  max-width: 1400px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centrado horizontal */
+  gap: 0.75rem; /* Espaciado entre elementos (mobile) */
   
-  // Breakpoint tablet (768px)
+  /* Breakpoint tablet - cambia a disposición horizontal */
   @media (min-width: 768px) {
-    flex-direction: row; // Tablet/desktop: disposición horizontal
+    flex-direction: row;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1rem; /* Espaciado aumentado */
   }
   
-  // Breakpoint desktop (1024px)
+  /* Breakpoint desktop - espaciado mayor */
   @media (min-width: 1024px) {
     gap: 1.5rem;
   }
@@ -45,26 +45,29 @@
 .logo-y-dolar {
   display: flex;
   align-items: center;
-  width: 100%; // Ocupa todo el ancho en mobile
-  justify-content: space-between; // Logo a la izquierda, espacio en medio
+  width: 100%; /* Ocupa todo el ancho en mobile */
+  justify-content: space-between; /* Logo a la izquierda */
   
-  // Breakpoint tablet (768px)
+  /* Breakpoint tablet - ajuste de ancho */
   @media (min-width: 768px) {
-    width: auto; // Ancho automático en desktop
-    gap: 1.5rem;
+    width: auto; /* Ancho según contenido */
+    gap: 1.5rem; /* Espaciado entre logo y otros elementos */
   }
 }
 
+/* Estilos para la imagen del logo */
 .logo img.logo-img {
-  height: 36px; // Tamaño reducido mobile
+  height: 36px; /* Altura reducida para mobile */
   width: auto;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease; /* Transición suave al hover */
+  filter: grayscale(100%); /* Filtro para blanco y negro */
   
-  // Breakpoint tablet (768px)
+  /* Breakpoint tablet - tamaño aumentado */
   @media (min-width: 768px) {
     height: 40px;
   }
   
+  /* Efecto hover - ligera transparencia */
   &:hover {
     opacity: 0.8;
   }
@@ -73,69 +76,78 @@
 /* ============ NAVEGACIÓN ============ */
 .nav-links {
   display: flex;
-  width: 100%; // Ocupa todo el ancho en mobile
-  overflow-x: auto; // Scroll horizontal si es necesario
-  padding-bottom: 0.25rem; // Espacio para scroll
-  gap: 0.5rem; // Gap inicial mobile
+  width: 100%; /* Ocupa todo el ancho en mobile */
+  overflow-x: auto; /* Permite scroll horizontal si es necesario */
+  padding-bottom: 0.25rem; /* Espacio para scroll */
+  gap: 0.5rem; /* Espaciado entre enlaces (mobile) */
   
-  // Breakpoint tablet (768px)
+  /* Breakpoint tablet - ajustes de alineación */
   @media (min-width: 768px) {
     justify-content: center;
     gap: 0.75rem;
     width: auto;
-    overflow-x: visible;
+    overflow-x: visible; /* Elimina scroll en tablet/desktop */
   }
   
-  // Breakpoint desktop (1024px)
+  /* Breakpoint desktop - espaciado mayor */
   @media (min-width: 1024px) {
     gap: 1rem;
   }
 }
 
+/* Estilos para los enlaces de navegación */
 .nav-links a {
-  color: #495057;
+  color: #333333; /* Color gris oscuro */
   text-decoration: none;
-  font-size: 0.85rem; // Tamaño mobile
+  font-size: 0.85rem; /* Tamaño de fuente mobile */
   padding: 0.4rem 0.6rem;
   border-radius: 4px;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease; /* Transición suave para hover */
   font-weight: 500;
-  white-space: nowrap; // Evita saltos de línea
+  white-space: nowrap; /* Evita saltos de línea */
+  border: 1px solid #e0e0e0; /* Borde gris claro */
   
-  // Breakpoint tablet (768px)
+  /* Breakpoint tablet - tamaño aumentado */
   @media (min-width: 768px) {
     font-size: 0.9rem;
     padding: 0.5rem 0.75rem;
   }
   
-  // Breakpoint desktop (1024px)
+  /* Breakpoint desktop - tamaño mayor */
   @media (min-width: 1024px) {
     font-size: 0.95rem;
     padding: 0.5rem 1rem;
   }
   
+  /* Efecto hover - fondo gris claro */
   &:hover {
-    color: #4361ee; // Color primario del proyecto
-    background-color: rgba(67, 97, 238, 0.1);
+    color: #000000; /* Texto negro */
+    background-color: #f0f0f0;
   }
   
+  /* Estilo para enlace activo */
   &.activo {
-    color: #4361ee;
-    background-color: rgba(67, 97, 238, 0.05);
-    font-weight: 600;
+    color: #000000; /* Texto negro */
+    background-color: #e0e0e0; /* Fondo gris medio */
+    font-weight: 600; /* Texto más grueso */
+    border-color: #b0b0b0; /* Borde más oscuro */
   }
 }
 
 /* ============ ACCIONES DEL HEADER ============ */
 .acciones-header {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.5rem; /* Espaciado entre botones */
   
+  /* Estilos base para botones */
   .btn {
     padding: 0.4rem 0.6rem;
     font-size: 0.85rem;
+    border: 1px solid #808080; /* Borde gris */
+    color: #333333; /* Texto gris oscuro */
+    background-color: transparent;
     
-    // Breakpoint tablet (768px)
+    /* Breakpoint tablet - tamaño aumentado */
     @media (min-width: 768px) {
       padding: 0.5rem 0.75rem;
       font-size: 0.9rem;
@@ -146,12 +158,12 @@
 /* ============ AJUSTES ESPECÍFICOS MOBILE ============ */
 @media (max-width: 767px) {
   .nav-links {
-    justify-content: flex-start; // Alineación izquierda en mobile
+    justify-content: flex-start; /* Alineación a la izquierda en mobile */
   }
   
   .logo-y-dolar {
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #e0e0e0; /* Borde divisorio */
     margin-bottom: 0.5rem;
   }
 }

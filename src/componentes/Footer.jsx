@@ -1,26 +1,35 @@
+// Importaciones básicas de React y dependencias
 import React from "react";
 import { Link } from "react-router-dom";
 import FooterGondraWorldDev from './FooterGondraWorldDev';
 import { FiHelpCircle } from "react-icons/fi";
 import "../assets/scss/_03-Componentes/_Footer.scss";
 
+// Componente principal del Footer
 function Footer() {
   return (
     <footer className="footer-container">
+      {/* Contenedor principal del footer */}
       <div className="footer-content">
+        
+        {/* Sección de columnas (logo - redes - logo) */}
         <div className="footer-columns">
+          
+          {/* Columna izquierda (logo) */}
           <div className="footer-column">
-            <a href="#" className="footer-logo-link">
+            <Link to="/" className="footer-logo-link">
               <img
                 className="footer-logo"
-                src="/img/02-logos/logoheader1-izquierda.png"
-                alt="Logo izquierdo"
+                src="/img/02-logos/logomiagendita1a.png" // Logo en blanco y negro
+                alt="Logo Mi Agendita"
               />
-            </a>
+            </Link>
           </div>
           
+          {/* Columna central (redes sociales y ayuda) */}
           <div className="footer-column">
             <div className="social-links">
+              {/* Enlaces a redes sociales */}
               <a
                 href="https://www.instagram.com"
                 target="_blank"
@@ -53,6 +62,8 @@ function Footer() {
               >
                 <i className="bi bi-twitter" /> Twitter
               </a>
+              
+              {/* Enlace a ayuda */}
               <Link to="/ayuda" className="social-link help-link">
                 <FiHelpCircle className="me-2" />
                 Ayuda
@@ -60,19 +71,22 @@ function Footer() {
             </div>
           </div>
           
-          <div className="footer-column">
-            <a href="#" className="footer-logo-link">
+          {/* Columna derecha (logo - eliminada para simplificar) */}
+          {/* <div className="footer-column">
+            <Link to="/" className="footer-logo-link">
               <img
                 className="footer-logo"
-                src="/img/02-logos/logoheader2-derecha.png"
-                alt="Logo derecho"
+                src="/img/02-logos/logomiagendita1a.png"
+                alt="Logo Mi Agendita"
               />
-            </a>
-          </div>
+            </Link>
+          </div> */}
         </div>
         
+        {/* Divisor visual */}
         <div className="footer-divider"></div>
         
+        {/* Sección de copyright */}
         <div className="footer-copyright">
           <FooterGondraWorldDev />
         </div>
